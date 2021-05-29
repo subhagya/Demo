@@ -1,6 +1,6 @@
 {
-  "name": "Demo",
-  "description": "Blank Process",
+  "name": "UiPathCICDIntegration",
+  "description": "UiPathCICDIntegration",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.3]",
