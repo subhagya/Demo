@@ -42,10 +42,10 @@ pipeline {
         }
          
          // Deploy Stages
-        stage('Deploy Tests') {
+        stage('Deploy to UAT') {
             steps {
                 echo "Deploying ${BRANCH_NAME} to orchestrator"
-                UiPathDeploy (
+                UiPathDeploy {
                 packagePath: "Output\\Tests\${env.BUILD_NUMBER}",
                 orchestratorAddress: "${UIPATH_ORCH_URL}",
                 orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
@@ -54,7 +54,7 @@ pipeline {
                 //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
                 credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
 
-        )
+               }
             }
         }
 	
@@ -62,8 +62,8 @@ pipeline {
 	stage('Perform Tests') {
 	    steps {
 		echo 'Testing the workflow...'
-		UiPathTest (
-		testTarget: [$class: ''TestSetEntry', testSet: "AnnounceFavouriteFood_Tests"],
+		UiPathTest {
+		testTarget: [$class: ''TestSetEntry', testSet: "ABC"],
 		orchestratorAddress: "${UIPATH_ORCH_URL}",
                 orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
                 folderName: "${UIPATH_ORCH_FOLDER_NAME}",
@@ -71,6 +71,7 @@ pipeline {
 		testResultsOutputPath: "result.xml",
 		//credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
                 credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'APIUserKey'), 
+                   }
                 }
             }
 
@@ -83,12 +84,12 @@ pipeline {
             	}
 	    	steps {
 		    echo "Building package with ${WORKSPACE}"
-                    UiPathPack (
+                    UiPathPack {
                       	outputPath: "Output\\${env.BUILD_NUMBER}",
                       	projectJsonPath: "project.json",
                       	version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${env.BUILD_NUMBER}"],
                       	useOrchestrator: false,
-			)
+			}
 	    	}
 	}
    
