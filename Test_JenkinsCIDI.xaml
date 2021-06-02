@@ -68,7 +68,11 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Test_JenkinsCIDI" sap:VirtualizedContainerService.HintSize="618,612" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="FavFood" />
+      <Variable x:TypeArguments="x:String" Name="FavFood">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="OutArgument. ResultValue" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -90,7 +94,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ContinueOnError="True" DisplayName="Invoke Main workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Main.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_FavFood">[FavFood]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_FavFood" />
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
