@@ -88,7 +88,7 @@
           <OutArgument x:TypeArguments="x:String">[out_FavFood]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">Pizza</InArgument>
+          <InArgument x:TypeArguments="x:String">Orange</InArgument>
         </Assign.Value>
       </Assign>
       <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Favourite Food = &quot; +out_FavFood]" />
