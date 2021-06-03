@@ -4,7 +4,7 @@ pipeline {
         // Environment Variables
         environment {
         MAJOR = '1'
-        MINOR = '0'
+        MINOR = '1'
         //Orchestrator Services
         UIPATH_ORCH_URL = "https://cloud.uipath.com/"
         UIPATH_ORCH_LOGICAL_NAME = "virtugryejrs"
@@ -42,7 +42,7 @@ pipeline {
         }
          
          // Deploy Stages
-        stage('Deploy to UAT') {
+        stage('Deploy Tests') {
             steps {
                 echo "Deploying ${BRANCH_NAME} to orchestrator"
                 UiPathDeploy (
