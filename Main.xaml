@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>587,525</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>631,525</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -88,7 +88,7 @@
           <OutArgument x:TypeArguments="x:String">[out_FavFood]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">apple</InArgument>
+          <InArgument x:TypeArguments="x:String">Pizza</InArgument>
         </Assign.Value>
       </Assign>
       <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Favourite Food = &quot; +out_FavFood]" />
